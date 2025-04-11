@@ -1,0 +1,141 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f9f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50;
+    padding: 20px 0;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Delivery Container */
+.delivery-container {
+    max-width: 960px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    position: relative;
+}
+
+/* Section Heading */
+.delivery-container h2 {
+    margin-bottom: 40px;
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* Progress Bar Container */
+.progress-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 40px 0;
+    padding: 0 10px;
+}
+
+/* Line behind progress steps */
+.progress-bar-container::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    height: 4px;
+    background: #ddd;
+    z-index: 0;
+    transform: translateY(-50%);
+}
+
+/* Individual Step */
+.progress-step {
+    position: relative;
+    z-index: 1;
+    background-color: #ddd;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background 0.4s, transform 0.3s;
+}
+
+/* Active Step */
+.progress-step.active {
+    background-color: #4CAF50;
+    transform: scale(1.1);
+    animation: pulse 1.5s infinite;
+}
+
+/* Labels Under Steps */
+.step-label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Pulse Animation for Active Step */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 20px rgba(76, 175, 80, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    }
+}
+
+/* Status Message */
+.delivery-message {
+    font-size: 1.3rem;
+    color: #4CAF50;
+    margin-top: 50px;
+    font-weight: 600;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .progress-bar-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .progress-bar-container::before {
+        display: none;
+    }
+
+    .progress-step {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 0.9rem;
+    }
+
+    .step-label {
+        font-size: 0.9rem;
+    }
+}

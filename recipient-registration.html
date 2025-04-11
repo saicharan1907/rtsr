@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipient Registration - Food Redistribution Platform</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="donor-registration.html">Register as Donor</a></li>
+                <li><a href="recipient-registration.html">Register as Recipient</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <header>
+        <h1>Recipient Registration</h1>
+        <p>Join the food redistribution platform as a recipient to receive surplus food.</p>
+    </header>
+
+    <main>
+        <form action="registration-success.html" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" rows="4" cols="50" required></textarea><br><br>
+
+            <label for="role">Select Role:</label>
+            <input type="hidden" name="role" value="recipient"><br><br>
+
+            <button type="submit"><a href="registration-success.html">Register as Recipient</a></button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Food Redistribution Platform | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

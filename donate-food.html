@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Food - Food Redistribution Platform</title>
+    <link rel="stylesheet" href="style-donate_food.css">
+    <style>
+        .submit-donation {
+            text-align: center;
+            margin-top: 40px;
+          }
+          
+          .btn.submit-all {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+          }
+          
+          .btn.submit-all:hover {
+            background-color: #3e8e41;
+            transform: scale(1.05);
+          }
+    </style>
+    <script>
+        function addFoodItem() {
+            const container = document.getElementById("food-items");
+            const itemCount = container.children.length + 1;
+
+            const form = document.createElement("div");
+            form.classList.add("form-container", "animate-entry");
+            form.innerHTML = `
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <h2>Food Item ${itemCount}</h2>
+                    <label for="item-name-${itemCount}">Food Name:</label>
+                    <input type="text" id="item-name-${itemCount}" name="item-name-${itemCount}" required>
+                    
+                    <label for="quantity-${itemCount}">Quantity:</label>
+                    <input type="number" id="quantity-${itemCount}" name="quantity-${itemCount}" required>
+                    
+                    <label for="expiry-date-${itemCount}">Expiry Date:</label>
+                    <input type="date" id="expiry-date-${itemCount}" name="expiry-date-${itemCount}" required>
+                    
+                    <label for="image-${itemCount}">Upload Image:</label>
+                    <input type="file" id="image-${itemCount}" name="image-${itemCount}" accept="image/*" required>
+                </form>
+            `;
+            container.appendChild(form);
+        }
+    </script>
+    <script>
+        function redirectToSummary() {
+          // You could add form validation here if needed
+          window.location.href = "donation-summary.html";
+        }
+      </script>
+      
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="order-history.html">Order History</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <br>
+        <br>
+        <br>
+
+        <h1 class="fade-in">Donate Food Items</h1>
+        <p class="fade-in">Fill out separate forms for each food item you wish to donate.</p>
+
+        <div id="food-items"></div>
+        
+        <button onclick="addFoodItem()" class="interactive-btn">Add  Item</button>
+        
+        <!-- Final Donate Button -->
+        <div class="submit-donation">
+            <button onclick="redirectToSummary()" class="btn submit-all">Submit All Donations</button>
+          </div>
+          
+    </main>
+
+    <footer class="fade-in">
+        <p>&copy; 2025 Food Redistribution Platform | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

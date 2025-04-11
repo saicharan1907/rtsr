@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donation Summary</title>
+  <link rel="stylesheet" href="donation-summary.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="donate-food.html">Donate</a></li>
+        <li><a href="donation-summary.html">Summary</a></li>
+        <li><a href="donor-registration.html">Register</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Donation Summary</h1>
+    <p class="tagline">Track all your food donations in one place</p>
+
+    <div class="summary-table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Expiry Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cooked Rice</td>
+            <td>10 Packs</td>
+            <td>2025-04-12</td>
+            <td class="status pending">Pending</td>
+          </tr>
+          <tr>
+            <td>Bread Loaves</td>
+            <td>5 Units</td>
+            <td>2025-04-11</td>
+            <td class="status approved">Approved</td>
+          </tr>
+          <tr>
+            <td>Biscuits</td>
+            <td>20 Packs</td>
+            <td>2025-05-01</td>
+            <td class="status delivered">Delivered</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+        <a href="payment.html" class="proceed-btn">Proceed to Payment</a>
+    </div>
+    
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Food Redistribution System. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
