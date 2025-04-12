@@ -1,30 +1,77 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Reset & Global Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f9f8;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6;
-}
-
-/* Header */
+  }
+  
+ /* Header Styling */
 header {
     background-color: #4CAF50;
+    color: white;
     padding: 20px 0;
     text-align: center;
-    color: white;
-    font-size: 2rem;
-    font-weight: 600;
+    position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Delivery Container */
-.delivery-container {
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+  
+  /* Navigation Menu */
+  nav {
+    margin-top: 15px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  nav ul li a:hover {
+    background-color: white;
+    color: #4CAF50;
+    font-weight: 600;
+  }
+  
+  /* Responsive Navigation */
+  @media (max-width: 600px) {
+    header {
+      font-size: 1.4rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    nav ul li a {
+      display: block;
+      padding: 10px 12px;
+    }
+  }
+  
+  /* Container */
+  .delivery-container {
     max-width: 960px;
     margin: 60px auto;
     background: #ffffff;
@@ -33,27 +80,26 @@ header {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
     text-align: center;
     position: relative;
-}
-
-/* Section Heading */
-.delivery-container h2 {
-    margin-bottom: 40px;
+  }
+  
+  /* Title */
+  .delivery-container h2 {
+    margin-bottom: 30px;
     font-size: 1.8rem;
-    color: #333;
-}
-
-/* Progress Bar Container */
-.progress-bar-container {
+    color: #2c7a7b;
+  }
+  
+  /* Progress Bar */
+  .progress-bar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     margin: 40px 0;
     padding: 0 10px;
-}
-
-/* Line behind progress steps */
-.progress-bar-container::before {
+  }
+  
+  .progress-bar-container::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -63,10 +109,9 @@ header {
     background: #ddd;
     z-index: 0;
     transform: translateY(-50%);
-}
-
-/* Individual Step */
-.progress-step {
+  }
+  
+  .progress-step {
     position: relative;
     z-index: 1;
     background-color: #ddd;
@@ -76,66 +121,132 @@ header {
     border-radius: 50%;
     line-height: 60px;
     text-align: center;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.4rem;
     transition: background 0.4s, transform 0.3s;
-}
-
-/* Active Step */
-.progress-step.active {
+    cursor: pointer;
+    box-shadow: 0 0 0 4px #f4f4f4;
+  }
+  
+  .progress-step i {
+    pointer-events: none;
+  }
+  
+  .progress-step.active {
     background-color: #4CAF50;
     transform: scale(1.1);
     animation: pulse 1.5s infinite;
-}
-
-/* Labels Under Steps */
-.step-label {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #333;
-    font-weight: 500;
-}
-
-/* Pulse Animation for Active Step */
-@keyframes pulse {
+  }
+  
+  /* Tooltip */
+  .progress-step[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4CAF50;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  
+  /* Animation */
+  @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6);
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.6);
     }
     70% {
-        box-shadow: 0 0 0 20px rgba(76, 175, 80, 0);
+      box-shadow: 0 0 0 20px rgba(76, 175, 80, 0);
     }
     100% {
-        box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+      box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
     }
-}
-
-/* Status Message */
-.delivery-message {
+  }
+  
+  /* Delivery Message */
+  .delivery-message {
     font-size: 1.3rem;
     color: #4CAF50;
-    margin-top: 50px;
+    margin-top: 40px;
     font-weight: 600;
-}
-
-/* Responsive Layout */
-@media (max-width: 768px) {
+  }
+  
+  /* Status Table */
+  .status-table {
+    margin-top: 30px;
+    overflow-x: auto;
+  }
+  
+  .status-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  }
+  
+  .status-table th,
+  .status-table td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .status-table th {
+    background-color: #e6fffa;
+    color: #2c7a7b;
+    font-weight: 600;
+  }
+  
+  .status-table td {
+    color: #333;
+  }
+  
+  /* Status Tag */
+  .status-tag {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+  }
+  
+  .status-tag.in-progress {
+    background-color: #f6ad55;
+    color: #fff;
+  }
+  
+  .status-tag.completed {
+    background-color: #38a169;
+    color: white;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
     .progress-bar-container {
-        flex-direction: column;
-        gap: 40px;
+      flex-direction: column;
+      gap: 40px;
     }
-
+  
     .progress-bar-container::before {
-        display: none;
+      display: none;
     }
-
+  
     .progress-step {
-        width: 50px;
-        height: 50px;
-        line-height: 50px;
-        font-size: 0.9rem;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+      line-height: 50px;
     }
-
-    .step-label {
-        font-size: 0.9rem;
+  
+    .status-table table,
+    .status-table th,
+    .status-table td {
+      font-size: 0.95rem;
     }
-}
+  }
+  
