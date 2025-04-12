@@ -2,21 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Delivery Status</title>
   <link rel="stylesheet" href="delivery-status.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script>
-    setTimeout(() => {
-      window.location.href = 'delivery-status.html';
-    }, 3000); // 3-second delay before redirection
-  </script>
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Food Redistribution</h1>
+
+  <!-- Header -->
+  <header style="text-align: center;">
+    Food Redistribution - Delivery Status
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -27,43 +22,61 @@
     </nav>
   </header>
 
-  <main>
-    <section class="status-container">
-      <h2>📦 Delivery Status</h2>
-      <p>Your donation is on its way! Here's the current status:</p>
+  <!-- Main Container -->
+  <div class="delivery-container">
+    <h2>Track Your Donation Delivery</h2>
 
-      <div class="progress-wrapper">
-        <div class="progress-bar">
-          <div class="step completed">
-            <div class="icon"><i class="fas fa-box"></i></div>
-            <p>Packed</p>
-          </div>
-          <div class="step current">
-            <div class="icon"><i class="fas fa-truck"></i></div>
-            <p>In Transit</p>
-          </div>
-          <div class="step">
-            <div class="icon"><i class="fas fa-hand-holding"></i></div>
-            <p>Delivered</p>
-          </div>
-        </div>
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+      <div class="progress-step active" data-tooltip="Requested">
+        <i class="fas fa-clipboard-check"></i>
       </div>
+      <div class="progress-step active" data-tooltip="Packed">
+        <i class="fas fa-box-open"></i>
+      </div>
+      <div class="progress-step active" data-tooltip="Out for Delivery">
+        <i class="fas fa-truck"></i>
+      </div>
+      <div class="progress-step" data-tooltip="Delivered">
+        <i class="fas fa-check-circle"></i>
+      </div>
+    </div>
 
-      <div class="delivery-info">
-        <p><strong>Donation ID:</strong> FD123456</p>
-        <p><strong>Receiver Name:</strong> Green Shelter</p>
-        <p><strong>Estimated Delivery:</strong> Within 24 hours</p>
-        <p><strong>Status:</strong> Out for Delivery 🚚</p>
-      </div>
-      <div style="text-align: center; margin-top: 40px;">
-        <a href="delivery-status.html" class="confirm-btn">Confirm Payment</a>
-      </div>
-      
-    </section>
-  </main>
+    <!-- Tabular Details -->
+    <div class="status-table">
+      <table>
+        <tr>
+          <th>Donation ID</th>
+          <td>FD123456</td>
+        </tr>
+        <tr>
+          <th>Donor Name</th>
+          <td>Ravi Kumar</td>
+        </tr>
+        <tr>
+          <th>Receiver</th>
+          <td>Helping Hands Foundation</td>
+        </tr>
+        <tr>
+          <th>Pickup Date</th>
+          <td>April 13, 2025</td>
+        </tr>
+        <tr>
+          <th>Estimated Delivery</th>
+          <td>April 14, 2025</td>
+        </tr>
+        <tr>
+          <th>Status</th>
+          <td><span class="status-tag in-progress">Out for Delivery</span></td>
+        </tr>
+      </table>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 Food Redistribution Platform. All rights reserved.</p>
-  </footer>
+    <!-- Status Message -->
+    <div class="delivery-message">
+      Your donation is on the way! Thank you for your generosity 💚
+    </div>
+  </div>
+
 </body>
 </html>
